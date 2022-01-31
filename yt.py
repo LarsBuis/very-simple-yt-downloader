@@ -1,6 +1,6 @@
 from pytube import YouTube
 import os
-#ask for the link from user
+
 while True:
     print("""
      __   _____  _   _ _____ _   _ ____  _____   ____  _     
@@ -37,7 +37,6 @@ while True:
         print("Enter the destination (leave blank for current directory)")
         destination = str(input(">> ")) or '.'
         out_file = ys.download(output_path=destination)
-        #ys.download()
         print("Download completed!!")
         return 
 
@@ -52,16 +51,3 @@ while True:
         video()
     elif a_or_v != 'audio' or 'video':
         print('try again')
-
-
-
-
-
-
-    #print("Number of views: ",yt.views)
-    #print("Length of video: ",yt.length)
-    #print("Rating of video: ",yt.rating)
-    #Getting the highest resolution possible
-    #$ys = yt.streams.get_highest_resolution()
-
-    #Starting download
