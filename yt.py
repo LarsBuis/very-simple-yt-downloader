@@ -1,5 +1,7 @@
 from pytube import YouTube
 import os
+from time import sleep
+from os import system, name
 
 while True:
     print("""
@@ -7,17 +9,23 @@ while True:
      \ \ / / _ \| | | |_   _| | | | __ )| ____| |  _ \| |    
       \ V / | | | | | | | | | | | |  _ \|  _|   | | | | |    
        | || |_| | |_| | | | | |_| | |_) | |___  | |_| | |___ 
-       |_| \___/ \___/  |_|  \___/|____/|_____| |____/|_____| made by L. Buis
+       |_| \___/ \___/  |_|  \___/|____/|_____| |____/|_____| made by Yuniqe
                                                                                     
     """)
 
+    def clear():
+        if name == 'nt':
+            _ = system('cls')
+  
+        else:
+            _ = system('clear')
 
     def audio():
         video = yt.streams.filter(only_audio=True).first()
-    
+
         print("Enter the destination (leave blank for current directory)")
         destination = str(input(">> ")) or '.'
-    
+
         out_file = video.download(output_path=destination)
 
         base, ext = os.path.splitext(out_file)
@@ -25,6 +33,8 @@ while True:
         os.rename(out_file, new_file)
 
         print(yt.title + " has been successfully downloaded.")
+        sleep(3)
+        clear()
         return
 
     def video():
@@ -32,7 +42,10 @@ while True:
         print("Enter the destination (leave blank for current directory)")
         destination = str(input(">> ")) or '.'
         out_file = ys.download(output_path=destination)
-        print("Download completed!!")
+        
+        print(yt.title + " has been successfully downloaded.")
+        sleep(3)
+        clear()        
         return 
 
     link = input("Enter the link of YouTube video you want to download:  ")
