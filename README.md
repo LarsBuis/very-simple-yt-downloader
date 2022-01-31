@@ -3,9 +3,9 @@ I've created this very simple python program to download videos or only the audi
 
 # How to build this project
 First you'll have to install Pyinstaller
-\n`pip install pyinstaller`
+`pip install pyinstaller`
 
 Then use this command
-\n`pyinstaller "insertscriptname".py --onefile`
+`pyinstaller "insertscriptname".py --onefile`
 
 And it's built!
